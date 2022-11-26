@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b57nvnb164cs3"]
+
+[node name="CTEditDialog" type="AcceptDialog"]
+title = "添加单项任务"
+position = Vector2i(41, 61)
+size = Vector2i(300, 118)
+visible = true
+ok_button_text = "确认"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -860.0
+offset_bottom = -574.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+offset_right = 284.0
+offset_bottom = 18.0
+text = "请输入任务名<空格>分值，如：喝早茶 7"
+fit_content_height = true
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 22.0
+offset_right = 284.0
+offset_bottom = 48.0
+placeholder_text = "单行，格式:任务名<空格>分值"
