@@ -1,0 +1,345 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsoxyjiximmn8"]
+
+[ext_resource type="Script" path="res://script/draft.gd" id="1_hodkx"]
+
+[node name="main" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+drag_to_rearrange_enabled = true
+script = ExtResource("1_hodkx")
+
+[node name="Properties" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Properties"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Properties/VBoxContainer"]
+offset_right = 688.0
+offset_bottom = 165.0
+bbcode_enabled = true
+text = "bbcode?
+Meow
+[i]meow meow[/i] meow
+可以写中文吧
+zwzwzwzwzw
+cncncncncncn
+[code]可以写中文cncn[/code]
+[color=#83AF9B]meow[/color]
+[table=5][cell]tex[/cell][cell]text[/cell][cell=3]text[/cell][cell]text[/cell][cell]text[/cell][/table]"
+fit_content_height = true
+
+[node name="Calendar" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Calendar"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Calendar/HSplitContainer"]
+anchors_preset = -1
+offset_right = 100.0
+offset_bottom = 662.0
+
+[node name="SpinBox" type="SpinBox" parent="Calendar/HSplitContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_horizontal = 0
+min_value = 1.0
+value = 1.0
+alignment = 1
+prefix = "Week"
+
+[node name="ItemList" type="ItemList" parent="Calendar/HSplitContainer/VBoxContainer"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 662.0
+size_flags_vertical = 3
+item_count = 3
+item_0/text = "Meeoow"
+item_1/text = "Mw2"
+item_2/text = "Mw3"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Calendar/HSplitContainer"]
+offset_left = 112.0
+offset_right = 688.0
+offset_bottom = 662.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Calendar/HSplitContainer/VBoxContainer2"]
+offset_right = 576.0
+offset_bottom = 21.0
+text = "Single zline 2022,02,02 Day43"
+
+[node name="TabContainer" type="TabContainer" parent="Calendar/HSplitContainer/VBoxContainer2"]
+offset_top = 25.0
+offset_right = 576.0
+offset_bottom = 662.0
+size_flags_vertical = 3
+
+[node name="DD" type="Control" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/DD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/DD/VBoxContainer"]
+offset_right = 576.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MMMMMMM
+MMMMMMMMM"
+
+[node name="Mission" type="Control" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer"]
+visible = false
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer"]
+clip_contents = true
+offset_right = 576.0
+offset_bottom = 611.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_right = 576.0
+offset_bottom = 70.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "今日得分：
+[center][font_size=50][color=red]Meow[/color][/font_size][color=red]/total[/color][/center]"
+fit_content_height = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_top = 74.0
+offset_right = 576.0
+offset_bottom = 100.0
+
+[node name="Label" type="Label" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer/HBoxContainer"]
+offset_top = 2.0
+offset_right = 532.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+text = "每日任务："
+
+[node name="Button" type="Button" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer/HBoxContainer"]
+offset_left = 536.0
+offset_right = 576.0
+offset_bottom = 26.0
+text = "切换"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_top = 104.0
+offset_right = 576.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer/HBoxContainer2"]
+offset_top = 2.0
+offset_right = 488.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "额外的任务："
+
+[node name="Button" type="Button" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer/HBoxContainer2"]
+offset_left = 492.0
+offset_right = 532.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "添加"
+
+[node name="Button2" type="Button" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer/HBoxContainer2"]
+offset_left = 536.0
+offset_right = 576.0
+offset_bottom = 26.0
+text = "删除"
+
+[node name="ItemList2" type="ItemList" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_top = 134.0
+offset_right = 576.0
+offset_bottom = 164.0
+auto_height = true
+item_count = 1
+item_0/text = "Meow"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_top = 168.0
+offset_right = 576.0
+offset_bottom = 186.0
+text = "meow"
+fit_content_height = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_top = 190.0
+offset_right = 576.0
+offset_bottom = 208.0
+text = "meowmeow"
+fit_content_height = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+clip_contents = true
+offset_top = 212.0
+offset_right = 576.0
+offset_bottom = 352.0
+
+[node name="ItemList" type="ItemList" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer/HBoxContainer3"]
+offset_right = 576.0
+offset_bottom = 140.0
+size_flags_horizontal = 3
+mouse_filter = 1
+auto_height = true
+item_count = 6
+item_0/text = "1234 "
+item_1/text = "2234"
+item_2/text = "3234"
+item_3/text = "4234"
+item_4/text = "134132213"
+item_5/text = "1341344"
+
+[node name="Button" type="Button" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Mission/ScrollContainer/VBoxContainer"]
+offset_top = 356.0
+offset_right = 40.0
+offset_bottom = 382.0
+size_flags_horizontal = 0
+text = "test"
+
+[node name="Task" type="Control" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Task"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Task/VBoxContainer"]
+offset_right = 576.0
+offset_bottom = 18.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Task/VBoxContainer/HBoxContainer"]
+offset_bottom = 18.0
+text = "Current Tasks:"
+fit_content_height = true
+
+[node name="HSeparator" type="HSeparator" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Task/VBoxContainer"]
+offset_top = 22.0
+offset_right = 576.0
+offset_bottom = 26.0
+
+[node name="Settings" type="Control" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionButton" type="OptionButton" parent="Calendar/HSplitContainer/VBoxContainer2/TabContainer/Settings"]
+offset_right = 14.0
+offset_bottom = 20.0
+item_count = 3
+selected = 0
+popup/item_0/text = "Meow"
+popup/item_0/id = 0
+popup/item_1/text = "wMeow"
+popup/item_1/id = 1
+popup/item_2/text = "wMeowwMeow"
+popup/item_2/id = 2
+
+[node name="Story" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Activity" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+visible = true
+
+[connection signal="value_changed" from="Calendar/HSplitContainer/VBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmplmb01aqg2f"]
+
+[ext_resource type="Script" path="res://script/CTCheckBox.gd" id="1_0pjyi"]
+
+[node name="CTCheckBox" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+script = ExtResource("1_0pjyi")
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_top = 3.0
+offset_right = 458.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "mission name"
+fit_content_height = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 462.0
+offset_top = 3.0
+offset_right = 691.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 1
+bbcode_enabled = true
+text = "[right]-100ab[/right]"
+fit_content_height = true
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+offset_left = 695.0
+offset_right = 719.0
+offset_bottom = 24.0
+size_flags_vertical = 4
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

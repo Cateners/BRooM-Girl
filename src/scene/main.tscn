@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm53wj10qk3sl"]
+
+[ext_resource type="Script" path="res://script/main.gd" id="1_owpl5"]
+[ext_resource type="Theme" uid="uid://c62vo7hj2x0m8" path="res://res/theme/default.tres" id="2_hlqry"]
+[ext_resource type="PackedScene" uid="uid://5upwebjmbhho" path="res://scene/properties.tscn" id="2_tciij"]
+[ext_resource type="PackedScene" uid="uid://bnqrvuaqt2lx" path="res://scene/calendar.tscn" id="3_0m8uf"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owpl5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.784314, 0.784314, 0.662745, 1)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+drag_to_rearrange_enabled = true
+
+[node name="封面" parent="TabContainer" instance=ExtResource("2_tciij")]
+offset_top = 26.0
+
+[node name="日程" parent="TabContainer" instance=ExtResource("3_0m8uf")]
+visible = false
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+position = Vector2i(100, 100)
+size = Vector2i(192, 100)
+theme = ExtResource("2_hlqry")
+ok_button_text = "退出程序"
+dialog_text = "存档文件存在但已损坏
+Alert"
