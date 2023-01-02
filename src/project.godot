@@ -25,15 +25,15 @@ Ctvars="*res://script/ctvars.gd"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=720
+window/size/viewport_width=960
+window/size/viewport_height=960
 window/handheld/orientation=6
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/stretch/scale=2.0
 
 [gui]
 
+theme/default_theme_scale=3.0
 theme/custom="res://res/theme/default.tres"
 
 [rendering]

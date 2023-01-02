@@ -298,6 +298,7 @@ var task_config
 #以后临时变量慢慢迁移到这里
 var temp = {
 	"is_human_pressing": true,
+	"is_landscape": true,
 #
 #	"current_editing_date":"2022-09-26",
 #	"current_editing_days":738789,

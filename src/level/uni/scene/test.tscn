@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1l0ponao1gjp"]
+
+[ext_resource type="Texture2D" uid="uid://cm4e2t8kjf2ny" path="res://level/uni/res/hero_normal.png" id="1_jirtm"]
+
+[node name="test" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jirtm")
+centered = false

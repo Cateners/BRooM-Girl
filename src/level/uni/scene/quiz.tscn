@@ -1,0 +1,125 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbuiwu0eq7mqt"]
+
+[ext_resource type="Shader" path="res://level/uni/scene/quiz.gdshader" id="1_5nomu"]
+[ext_resource type="Texture2D" uid="uid://cm4e2t8kjf2ny" path="res://level/uni/res/hero_normal.png" id="1_gs6hj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54jxa"]
+shader = ExtResource("1_5nomu")
+shader_parameter/line_color = Vector4(0, 0, 0, 1)
+shader_parameter/line_thickness = 1.5
+
+[node name="quiz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="BoxContainer" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+offset_right = 960.0
+offset_bottom = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="BoxContainer/BoxContainer"]
+layout_mode = 2
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="BoxContainer2" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+offset_top = 13.0
+offset_right = 960.0
+offset_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+offset_top = 448.0
+offset_right = 960.0
+offset_bottom = 960.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="BoxContainer/BoxContainer3"]
+layout_mode = 2
+offset_right = 256.0
+offset_bottom = 512.0
+
+[node name="SubViewport" type="SubViewport" parent="BoxContainer/BoxContainer3/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(256, 512)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/BoxContainer3/SubViewportContainer/SubViewport"]
+material = SubResource("ShaderMaterial_54jxa")
+texture = ExtResource("1_gs6hj")
+centered = false
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BoxContainer/BoxContainer3"]
+layout_mode = 2
+offset_left = 268.0
+offset_right = 268.0
+offset_bottom = 512.0
+
+[node name="GridContainer" type="GridContainer" parent="BoxContainer/BoxContainer3"]
+layout_direction = 2
+layout_mode = 2
+offset_left = 306.0
+offset_top = 352.0
+offset_right = 933.0
+offset_bottom = 512.0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+columns = 3
+
+[node name="CheckBox" type="CheckBox" parent="BoxContainer/BoxContainer3/GridContainer"]
+layout_mode = 2
+offset_right = 201.0
+offset_bottom = 74.0
+text = "mmm"
+
+[node name="CheckBox2" type="CheckBox" parent="BoxContainer/BoxContainer3/GridContainer"]
+layout_mode = 2
+offset_left = 213.0
+offset_right = 414.0
+offset_bottom = 74.0
+text = "mmm"
+
+[node name="CheckBox3" type="CheckBox" parent="BoxContainer/BoxContainer3/GridContainer"]
+layout_mode = 2
+offset_left = 426.0
+offset_right = 627.0
+offset_bottom = 74.0
+text = "mmm"
+
+[node name="CheckBox4" type="CheckBox" parent="BoxContainer/BoxContainer3/GridContainer"]
+layout_mode = 2
+offset_top = 86.0
+offset_right = 201.0
+offset_bottom = 160.0
+text = "mmm"
+
+[node name="CheckBox5" type="CheckBox" parent="BoxContainer/BoxContainer3/GridContainer"]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 86.0
+offset_right = 414.0
+offset_bottom = 160.0
+text = "mmm"
+
+[node name="CheckBox6" type="CheckBox" parent="BoxContainer/BoxContainer3/GridContainer"]
+layout_mode = 2
+offset_left = 426.0
+offset_top = 86.0
+offset_right = 627.0
+offset_bottom = 160.0
+text = "mmm"

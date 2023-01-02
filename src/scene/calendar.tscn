@@ -17,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_txvy0")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,63 +29,60 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
-offset_right = 100.0
-offset_bottom = 704.0
+layout_mode = 2
 
 [node name="SpinBox" type="SpinBox" parent="HSplitContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
-offset_right = 100.0
-offset_bottom = 26.0
+layout_mode = 2
 alignment = 1
 
 [node name="ItemList" type="ItemList" parent="HSplitContainer/VBoxContainer"]
-offset_top = 30.0
-offset_right = 100.0
-offset_bottom = 704.0
+layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
-offset_left = 112.0
-offset_right = 704.0
-offset_bottom = 704.0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="HSplitContainer/VBoxContainer2"]
-offset_right = 592.0
-offset_bottom = 42.0
+layout_mode = 2
 text = "Meow meow 2022-02-02, Day 2
 wMeow wMeow"
 text_overrun_behavior = 3
 
 [node name="TabContainer" type="TabContainer" parent="HSplitContainer/VBoxContainer2"]
-offset_top = 46.0
-offset_right = 592.0
-offset_bottom = 704.0
+layout_mode = 2
 size_flags_vertical = 3
 drag_to_rearrange_enabled = true
 
 [node name="日记" parent="HSplitContainer/VBoxContainer2/TabContainer" instance=ExtResource("2_fqjri")]
-offset_top = 26.0
+visible = false
+layout_mode = 2
 
 [node name="任务" parent="HSplitContainer/VBoxContainer2/TabContainer" instance=ExtResource("3_ee38l")]
 visible = false
-anchors_preset = -1
-offset_top = 26.0
+layout_mode = 2
 
 [node name="工作" parent="HSplitContainer/VBoxContainer2/TabContainer" instance=ExtResource("4_gi6ku")]
 visible = false
+layout_mode = 2
 
 [node name="任务设置" parent="HSplitContainer/VBoxContainer2/TabContainer" instance=ExtResource("5_ykg7n")]
 visible = false
+layout_mode = 2
 
 [node name="工作编辑" parent="HSplitContainer/VBoxContainer2/TabContainer" instance=ExtResource("6_cs6of")]
+layout_mode = 2
+
+[node name="日期" type="HBoxContainer" parent="HSplitContainer/VBoxContainer2/TabContainer"]
 visible = false
+layout_mode = 2
 
 [connection signal="dragged" from="HSplitContainer" to="." method="_on_h_split_container_dragged"]
 [connection signal="item_selected" from="HSplitContainer/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="tab_changed" from="HSplitContainer/VBoxContainer2/TabContainer" to="." method="_on_tab_container_tab_changed"]
-[connection signal="note_saved" from="HSplitContainer/VBoxContainer2/TabContainer/日记" to="." method="refresh_calendar_title"]
 [connection signal="note_saved" from="HSplitContainer/VBoxContainer2/TabContainer/日记" to="." method="refresh_content_title"]
+[connection signal="note_saved" from="HSplitContainer/VBoxContainer2/TabContainer/日记" to="." method="refresh_calendar_title"]
 [connection signal="edit_mission" from="HSplitContainer/VBoxContainer2/TabContainer/任务" to="." method="start_editing_mission"]
 [connection signal="edit_task" from="HSplitContainer/VBoxContainer2/TabContainer/工作" to="." method="start_editing_task"]
 [connection signal="back_to_task" from="HSplitContainer/VBoxContainer2/TabContainer/工作编辑" to="." method="_on_back_to_task"]

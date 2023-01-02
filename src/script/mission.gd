@@ -272,7 +272,7 @@ func _process(delta):
 
 #要添加项，先弹出对话框填写信息
 func _on_add_extra_button_pressed():
-	$AddExtraDialog.popup_centered(Vector2(320,0))
+	$AddExtraDialog.popup_centered(Vector2(900,0))
 	pass # Replace with function body.
 
 #填写完信息确认后，解析信息

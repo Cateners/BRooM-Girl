@@ -13,6 +13,9 @@ var items:Array
 @onready var Tabs: TabContainer = $HSplitContainer/VBoxContainer2/TabContainer
 @onready var MissionSettings: Control = $"HSplitContainer/VBoxContainer2/TabContainer/任务设置"
 @onready var TaskSettings: Control = $"HSplitContainer/VBoxContainer2/TabContainer/工作编辑"
+@onready var DateAdjustmentContainer: HBoxContainer = $"HSplitContainer/VBoxContainer2/TabContainer/日期"
+@onready var DateAdjustment: VBoxContainer = $HSplitContainer/VBoxContainer
+@onready var MainContainer: HSplitContainer = $HSplitContainer
 
 #提醒更新日记的信号
 signal load_diary
@@ -32,9 +35,8 @@ func _ready():
 	#加载一些东西
 	#这里检测一下屏幕方向变化，如果屏幕旋转导致方向改变可选择性隐藏左栏
 	get_tree().get_root().connect("size_changed", change_content_visibility)
-	change_content_visibility()
 	#根据以前的存档改一下分隔栏的位置
-	$HSplitContainer.set_split_offset(Global.global_config.current_split_offset)
+	MainContainer.set_split_offset(Global.global_config.current_split_offset)
 	#初始化一些子节点
 	#这里已经在编辑器里连接了信号，就不另外连了
 	#diary_instance.connect("note_saved",refresh_calendar_title)
@@ -44,6 +46,9 @@ func _ready():
 
 	Tabs.set_tab_hidden(Tabs.get_tab_idx_from_control(MissionSettings),true)
 	Tabs.set_tab_hidden(Tabs.get_tab_idx_from_control(TaskSettings),true)
+	Tabs.set_tab_hidden(Tabs.get_tab_idx_from_control(DateAdjustmentContainer),true)
+	
+	change_content_visibility()
 	
 	load_date()
 	load_content()
@@ -59,12 +64,41 @@ func _process(delta):
 
 #选择性隐藏左栏
 func change_content_visibility():
-	#如果需要在竖屏状态隐藏左栏
-	#宽大于等于高则显示，否则不显示
+#	print(DateAdjustment.size.x,1)
+#	print(DateAdjustment.size.y)
+#	print(DateAdjustmentContainer.size.x)
+#	print(DateAdjustmentContainer.size.y)
+	var is_landscape = get_viewport_rect().size[0]>=get_viewport_rect().size[1]
+#	#如果需要在竖屏状态隐藏左栏
+#	#宽大于等于高则显示，否则不显示
+#	if Global.global_config.portrait_hide_content:
+#		$HSplitContainer/VBoxContainer.set_visible(get_viewport_rect().size[0]>=get_viewport_rect().size[1])
+#		pass
+#	#宽大于等于高则显示，否则单独显示为标签
 	if Global.global_config.portrait_hide_content:
-		$HSplitContainer/VBoxContainer.set_visible(get_viewport_rect().size[0]>=get_viewport_rect().size[1])
-		pass
-	pass
+		#检查，记录屏幕状态
+		if Global.temp.is_landscape == is_landscape:
+			return
+		Global.temp.is_landscape = is_landscape
+		#横竖屏切换
+		if is_landscape:
+			Tabs.set_tab_hidden(Tabs.get_tab_idx_from_control(DateAdjustmentContainer),true)
+			DateAdjustmentContainer.remove_child(DateAdjustment)
+			MainContainer.add_child(DateAdjustment)
+			MainContainer.move_child(DateAdjustment,0)
+			#DateAdjustment.set_owner(MainContainer)
+			DateAdjustment.set_h_size_flags(Control.SIZE_FILL)
+			if Tabs.get_current_tab_control() == DateAdjustmentContainer:
+				Tabs.set_current_tab(Tabs.get_tab_idx_from_control(DailyTask))
+			return
+		Tabs.set_tab_hidden(Tabs.get_tab_idx_from_control(DateAdjustmentContainer),false)
+		MainContainer.remove_child(DateAdjustment)
+		DateAdjustmentContainer.add_child(DateAdjustment)
+		#DateAdjustment.set_owner(DateAdjustmentContainer)
+		DateAdjustment.set_h_size_flags(Control.SIZE_EXPAND_FILL)
+		#DateAdjustment.get_node("SpinBox").set_h_size_flags(Control.SIZE_EXPAND_FILL)
+		#DateAdjustment.get_node("ItemList").set_h_size_flags(Control.SIZE_EXPAND_FILL)
+		#DateAdjustment.get_node("ItemList").set_v_size_flags(Control.SIZE_EXPAND_FILL)
 
 func read_date():
 	#如果没有日期所对应的记录，就先新建一个
@@ -91,14 +125,14 @@ func load_content():
 	#TODO
 	#这里最好处理一下指定的配置不存在、甚至加载了空配置的情况，增加健壮性
 	var current_config = Global.content_config[Global.global_config.default_content_config]
-	$HSplitContainer/VBoxContainer/SpinBox.set_min(current_config.range[0])
-	$HSplitContainer/VBoxContainer/SpinBox.set_max(current_config.range[1])
-	$HSplitContainer/VBoxContainer/SpinBox.set_custom_minimum_size(Vector2(current_config.min_width,0))
+	DateAdjustment.get_node("SpinBox").set_min(current_config.range[0])
+	DateAdjustment.get_node("SpinBox").set_max(current_config.range[1])
+	DateAdjustment.get_node("SpinBox").set_custom_minimum_size(Vector2(current_config.min_width,0))
 	#这个时候再手动链接SpinBox改变事件，以防前面的改动造成误处理
-	$HSplitContainer/VBoxContainer/SpinBox.connect("value_changed",_on_spin_box_value_changed)
+	DateAdjustment.get_node("SpinBox").connect("value_changed",_on_spin_box_value_changed)
 	#这里改变了value，应该会触发_on_spin_box_value_changed事件
 	#剩下的事情就让事件处理吧
-	$HSplitContainer/VBoxContainer/SpinBox.set_value(clamp(Global.global_config.current_content_pos,current_config.range[0],current_config.range[1]))
+	DateAdjustment.get_node("SpinBox").set_value(clamp(Global.global_config.current_content_pos,current_config.range[0],current_config.range[1]))
 	#WARNING由于未知原因导致事件没有触发，所以手动执行一下!
 	_on_spin_box_value_changed(clamp(Global.global_config.current_content_pos,current_config.range[0],current_config.range[1]))
 	pass
@@ -177,7 +211,7 @@ func new_date():
 
 #加载日历和日记的第一句作为标题
 func refresh_calendar_title():
-	$HSplitContainer/VBoxContainer2/Label.set_text("%s, Day %s\n《%s》"%[Global.temp.current_editing_date, 1+Ctdate.diff_days(Global.temp.current_editing_date_dict,Time.get_datetime_dict_from_datetime_string(Global.global_config.start_date,false)),Global.calendar_config.notes.substr(0,Global.calendar_config.notes.find("\n"))])
+	MainContainer.get_node("VBoxContainer2/Label").set_text("%s, Day %s\n《%s》"%[Global.temp.current_editing_date, 1+Ctdate.diff_days(Global.temp.current_editing_date_dict,Time.get_datetime_dict_from_datetime_string(Global.global_config.start_date,false)),Global.calendar_config.notes.substr(0,Global.calendar_config.notes.find("\n"))])
 #	$HSplitContainer/VBoxContainer2/Label.set_text("%s, Day %s\n《%s》"%[Global.temp.current_editing_date, 1+Ctdate.diff_days(Time.get_datetime_dict_from_datetime_string(Global.temp.current_editing_date,false),Time.get_datetime_dict_from_datetime_string(Global.global_config.start_date,false)),Global.calendar_config.notes.substr(0,Global.calendar_config.notes.find("\n"))])
 
 #TODO一直计算标题很烦的，要不在编辑完的时候就计算了？
@@ -189,9 +223,9 @@ func refresh_content_title():
 	if pos>=0:
 		var title = Global.calendar_config.notes.substr(0,Global.calendar_config.notes.find("\n"))
 		if title.is_empty():
-			$HSplitContainer/VBoxContainer/ItemList.set_item_text(pos,Global.temp.current_editing_date)
+			DateAdjustment.get_node("ItemList").set_item_text(pos,Global.temp.current_editing_date)
 		else:
-			$HSplitContainer/VBoxContainer/ItemList.set_item_text(pos,title)
+			DateAdjustment.get_node("ItemList").set_item_text(pos,title)
 		
 		
 	
@@ -203,17 +237,17 @@ func _on_spin_box_value_changed(value):
 	#这是当前的config
 	var current_config = Global.content_config[Global.global_config.default_content_config]
 	#刷新prefix, suffix
-	$HSplitContainer/VBoxContainer/SpinBox.set_prefix(Ctutils.evaluate(current_config.prefix).call(value))
-	$HSplitContainer/VBoxContainer/SpinBox.set_suffix(Ctutils.evaluate(current_config.suffix).call(value))
+	DateAdjustment.get_node("SpinBox").set_prefix(Ctutils.evaluate(current_config.prefix).call(value))
+	DateAdjustment.get_node("SpinBox").set_suffix(Ctutils.evaluate(current_config.suffix).call(value))
 	#先清空ItemList,再一项一项添加进去，谓之刷新
-	$HSplitContainer/VBoxContainer/ItemList.clear()
+	DateAdjustment.get_node("ItemList").clear()
 	#记录下数据备用
 	items = Ctutils.evaluate(current_config.mapping).call(value)
 	for i in items:
 		#这里用一个函数计算日期对应的字符串
 		#TODO以后并到config里使其可自动化
 		#有日记标题就用标题，否则日期
-		$HSplitContainer/VBoxContainer/ItemList.add_item((func(day):
+		DateAdjustment.get_node("ItemList").add_item((func(day):
 			#如果所需的文件存在且有日记标题
 			var date_string = Ctdate.get_date_string_from_date_dict(Ctdate.diff_date(Time.get_datetime_dict_from_datetime_string(Global.global_config.start_date,false),day-1))
 			var path = "%s/%s.json"%[Global.DIARY_DIR_PATH,date_string]
