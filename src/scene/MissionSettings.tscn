@@ -21,46 +21,30 @@ grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
-anchors_preset = -1
-offset_right = 720.0
-offset_bottom = 720.0
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
-offset_right = 720.0
-offset_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 716.0
-offset_bottom = 716.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 80.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 20.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 1.0
-offset_right = 694.0
-offset_bottom = 19.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -70,42 +54,25 @@ fit_content_height = true
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 698.0
-offset_right = 712.0
-offset_bottom = 20.0
 size_flags_vertical = 4
 
 [node name="CopyButton" type="Button" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 24.0
-offset_right = 712.0
-offset_bottom = 50.0
 text = "复制为新模板"
 
 [node name="DeleteButton" type="Button" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 54.0
-offset_right = 712.0
-offset_bottom = 80.0
 text = "删除此模板"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 84.0
-offset_right = 712.0
-offset_bottom = 88.0
 mouse_filter = 1
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 92.0
-offset_right = 712.0
-offset_bottom = 140.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -115,36 +82,22 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 712.0
-offset_bottom = 48.0
 size_flags_vertical = 4
 placeholder_text = "模板名字"
 expand_to_text_length = true
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 144.0
-offset_right = 712.0
-offset_bottom = 148.0
 mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 152.0
-offset_right = 712.0
-offset_bottom = 234.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 636.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -154,16 +107,10 @@ fit_content_height = true
 
 [node name="MissionSaveButton" type="Button" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 640.0
-offset_right = 712.0
-offset_bottom = 26.0
 text = "保存更改"
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 712.0
-offset_bottom = 82.0
 text = "Meow 10
 MeowMeow 20"
 placeholder_text = "任务名<空格>分数"
@@ -171,21 +118,13 @@ scroll_fit_content_height = true
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 238.0
-offset_right = 712.0
-offset_bottom = 242.0
 mouse_filter = 1
 
 [node name="HBoxContainer3" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 246.0
-offset_right = 712.0
-offset_bottom = 294.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 tooltip_text = "到达此分数后分数文字会变红"
@@ -195,36 +134,22 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 712.0
-offset_bottom = 48.0
 text = "0"
 placeholder_text = "填数字"
 virtual_keyboard_type = 2
 
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 298.0
-offset_right = 712.0
-offset_bottom = 302.0
 mouse_filter = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 306.0
-offset_right = 712.0
-offset_bottom = 366.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 636.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -233,16 +158,10 @@ fit_content_height = true
 
 [node name="RewardSaveButton" type="Button" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
-offset_left = 640.0
-offset_right = 712.0
-offset_bottom = 26.0
 text = "保存更改"
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 712.0
-offset_bottom = 60.0
 placeholder_text = " 要达到的分值<空格>奖励名<空格>数量"
 scroll_fit_content_height = true
 

@@ -13,11 +13,11 @@ func _process(delta):
 	pass
 
 func refresh_text():
-	$VBoxContainer/RichTextLabel.text="""[shake rate=5 level=5]%s
+	$ScrollContainer/VBoxContainer/RichTextLabel.text="""[shake rate=5 level=%s]%s
 
 Level %s
 Experience %s[color=red]/1000[/color]
 
 拥有的物品：
-%s[/shake]""" % [Global.player_config.name, Global.player_config.level, Global.player_config.experience, "(无)" if Global.player_config.objects.strip_edges().length()==0 else Global.player_config.objects]
+%s[/shake]""" % [Global.temp.task_emergency, Global.player_config.name, Global.player_config.level, Global.player_config.experience, "(无)" if Global.player_config.objects.strip_edges().length()==0 else Global.player_config.objects]
 

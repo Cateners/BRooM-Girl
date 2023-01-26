@@ -25,121 +25,75 @@ grow_vertical = 2
 
 [node name="DeleteButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 26.0
 text = "取消新建/删除工作"
 
 [node name="CopyButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 712.0
-offset_bottom = 56.0
 text = "复制此工作"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 60.0
-offset_right = 712.0
-offset_bottom = 64.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 68.0
-offset_right = 712.0
-offset_bottom = 712.0
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
-offset_right = 712.0
-offset_bottom = 644.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 708.0
-offset_bottom = 640.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 48.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 18.0
 mouse_filter = 1
 text = "工作名："
 fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 704.0
-offset_bottom = 48.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 52.0
-offset_right = 704.0
-offset_bottom = 104.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 18.0
 mouse_filter = 1
 text = "工作详情："
 fit_content_height = true
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 704.0
-offset_bottom = 52.0
 scroll_fit_content_height = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 108.0
-offset_right = 704.0
-offset_bottom = 160.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 18.0
 mouse_filter = 1
 text = "奖励："
 fit_content_height = true
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 704.0
-offset_bottom = 52.0
 placeholder_text = "奖励名<空格>数量，可写多行"
 scroll_fit_content_height = true
 
 [node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 164.0
-offset_right = 704.0
-offset_bottom = 190.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 652.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -148,31 +102,19 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
-offset_left = 656.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "数字"
 expand_to_text_length = true
 virtual_keyboard_type = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 194.0
-offset_right = 704.0
-offset_bottom = 198.0
 mouse_filter = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 202.0
-offset_right = 704.0
-offset_bottom = 228.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 481.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -181,9 +123,6 @@ fit_content_height = true
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_left = 485.0
-offset_right = 704.0
-offset_bottom = 26.0
 item_count = 2
 selected = 0
 popup/item_0/text = "满足某条件时出现的工作"
@@ -194,20 +133,12 @@ popup/item_1/id = 1
 [node name="ConditionContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-offset_top = 232.0
-offset_right = 704.0
-offset_bottom = 438.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 502.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -216,9 +147,6 @@ fit_content_height = true
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 506.0
-offset_right = 704.0
-offset_bottom = 26.0
 item_count = 5
 selected = 0
 popup/item_0/text = "仅今天(YYYY-MM-DD)"
@@ -234,15 +162,9 @@ popup/item_4/id = 4
 
 [node name="Data1Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 704.0
-offset_bottom = 56.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data1Container"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 604.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -251,81 +173,48 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data1Container"]
 layout_mode = 2
-offset_left = 608.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "天数，数字"
 expand_to_text_length = true
 virtual_keyboard_type = 2
 
 [node name="Data2Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer"]
 layout_mode = 2
-offset_top = 60.0
-offset_right = 704.0
-offset_bottom = 86.0
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="CheckBox0" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 198.0
-offset_right = 242.0
-offset_bottom = 26.0
 text = "日"
 
 [node name="CheckBox1" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 242.0
-offset_right = 286.0
-offset_bottom = 26.0
 text = "一"
 
 [node name="CheckBox2" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 286.0
-offset_right = 330.0
-offset_bottom = 26.0
 text = "二"
 
 [node name="CheckBox3" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 330.0
-offset_right = 374.0
-offset_bottom = 26.0
 text = "三"
 
 [node name="CheckBox4" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 374.0
-offset_right = 418.0
-offset_bottom = 26.0
 text = "四"
 
 [node name="CheckBox5" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 418.0
-offset_right = 462.0
-offset_bottom = 26.0
 text = "五"
 
 [node name="CheckBox6" type="CheckBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data2Container"]
 layout_mode = 2
-offset_left = 462.0
-offset_right = 506.0
-offset_bottom = 26.0
 text = "六"
 
 [node name="Data3Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer"]
 layout_mode = 2
-offset_top = 90.0
-offset_right = 704.0
-offset_bottom = 116.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data3Container"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 604.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -334,30 +223,19 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/Data3Container"]
 layout_mode = 2
-offset_left = 608.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "天数，数字"
 expand_to_text_length = true
 virtual_keyboard_type = 2
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer"]
 layout_mode = 2
-offset_top = 120.0
-offset_right = 704.0
-offset_bottom = 150.0
 scroll_fit_content_height = true
 
 [node name="HBoxContainer5" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer"]
 layout_mode = 2
-offset_top = 154.0
-offset_right = 704.0
-offset_bottom = 206.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/HBoxContainer5"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -366,28 +244,17 @@ fit_content_height = true
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConditionContainer/HBoxContainer5"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 704.0
-offset_bottom = 52.0
 placeholder_text = "YYYY-MM-DD，可多行"
 scroll_fit_content_height = true
 
 [node name="PeriodContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 232.0
-offset_right = 704.0
-offset_bottom = 378.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer"]
 layout_mode = 2
-offset_right = 704.0
-offset_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 604.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -396,23 +263,14 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 608.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "YYYY-MM-DD"
 expand_to_text_length = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 704.0
-offset_bottom = 56.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer2"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 604.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -421,23 +279,14 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer2"]
 layout_mode = 2
-offset_left = 608.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "YYYY-MM-DD"
 expand_to_text_length = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer"]
 layout_mode = 2
-offset_top = 60.0
-offset_right = 704.0
-offset_bottom = 86.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer3"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 604.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -446,24 +295,15 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer3"]
 layout_mode = 2
-offset_left = 608.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "天数，数字"
 expand_to_text_length = true
 virtual_keyboard_type = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer"]
 layout_mode = 2
-offset_top = 90.0
-offset_right = 704.0
-offset_bottom = 116.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer4"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 652.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -472,24 +312,15 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer4"]
 layout_mode = 2
-offset_left = 656.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "数字"
 expand_to_text_length = true
 virtual_keyboard_type = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer"]
 layout_mode = 2
-offset_top = 120.0
-offset_right = 704.0
-offset_bottom = 146.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer5"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 604.0
-offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
@@ -498,9 +329,6 @@ fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PeriodContainer/HBoxContainer5"]
 layout_mode = 2
-offset_left = 608.0
-offset_right = 704.0
-offset_bottom = 26.0
 placeholder_text = "YYYY-MM-DD"
 expand_to_text_length = true
 

@@ -13,8 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_e80bw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
@@ -26,101 +25,60 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-offset_right = 952.0
-offset_bottom = 70.0
 mouse_filter = 1
 bbcode_enabled = true
 text = "今日得分：
-[center][font_size=50][color=red]Meow[/color][/font_size][color=red]/total[/color][/center]"
+[center][font_size=150][color=red]Meow[/color][/font_size][color=red]/total[/color][/center]"
 fit_content_height = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 74.0
-offset_right = 952.0
-offset_bottom = 78.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
-anchors_preset = -1
-offset_top = 82.0
-offset_right = 952.0
-offset_bottom = 952.0
-grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
-offset_right = 952.0
-offset_bottom = 870.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Margin" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 952.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 952.0
-offset_bottom = 30.0
 
 [node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 2.0
-offset_right = 908.0
-offset_bottom = 23.0
 size_flags_horizontal = 3
 text = "每日任务："
 
 [node name="ModifyMissionButton" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 912.0
-offset_right = 952.0
-offset_bottom = 26.0
 text = "修改"
 
 [node name="DailyContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 34.0
-offset_right = 952.0
-offset_bottom = 34.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 38.0
-offset_right = 952.0
-offset_bottom = 64.0
 
 [node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_top = 2.0
-offset_right = 816.0
-offset_bottom = 23.0
 size_flags_horizontal = 3
 text = "额外的任务："
 
 [node name="AddExtraButton" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_left = 820.0
-offset_right = 860.0
-offset_bottom = 26.0
 text = "添加"
 
 [node name="DelExtraButton" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-offset_left = 864.0
-offset_right = 952.0
-offset_bottom = 26.0
 text = "删除选中项"
 
 [node name="ExtraContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 68.0
-offset_right = 952.0
-offset_bottom = 68.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -128,70 +86,58 @@ one_shot = true
 [node name="AddExtraDialog" type="AcceptDialog" parent="."]
 title = "添加单项任务"
 position = Vector2i(41, 61)
-size = Vector2i(900, 100)
+size = Vector2i(900, 434)
 ok_button_text = "确认"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AddExtraDialog"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = -132.0
+offset_bottom = -702.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="AddExtraDialog/VBoxContainer"]
 layout_mode = 2
-offset_right = 960.0
-offset_bottom = 18.0
 text = "请输入\"任务名<空格>分值\"，如：喝早茶 7"
 fit_content_height = true
 
 [node name="LineEdit" type="LineEdit" parent="AddExtraDialog/VBoxContainer"]
 layout_mode = 2
-offset_top = 22.0
-offset_right = 960.0
-offset_bottom = 48.0
 placeholder_text = "单行，格式:任务名<空格>分值"
 
 [node name="SwitchMissionDialog" type="AcceptDialog" parent="."]
 position = Vector2i(139, 114)
-size = Vector2i(140, 100)
+size = Vector2i(516, 334)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SwitchMissionDialog"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -828.0
-offset_bottom = -904.0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = -516.0
+offset_bottom = -802.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SwitchMissionDialog/VBoxContainer"]
 layout_mode = 2
-offset_right = 124.0
-offset_bottom = 26.0
 
 [node name="Label" type="Label" parent="SwitchMissionDialog/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_top = 2.0
-offset_right = 80.0
-offset_bottom = 23.0
 size_flags_horizontal = 3
 text = "任务列表："
 
 [node name="Button" type="Button" parent="SwitchMissionDialog/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 84.0
-offset_right = 124.0
-offset_bottom = 26.0
 text = "新建"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SwitchMissionDialog/VBoxContainer"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 124.0
-offset_bottom = 30.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SwitchMissionDialog/VBoxContainer/ScrollContainer"]
 layout_mode = 2

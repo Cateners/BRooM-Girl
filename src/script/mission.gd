@@ -75,7 +75,8 @@ func refresh_daily_mission():
 	#清空列表
 	DailyContainer.get_children().map(func(x):
 		DailyContainer.remove_child(x)
-		return x.queue_free())
+		x.queue_free())
+#		return x.queue_free())
 	#计算总分的变量
 	Global.temp.mission_score = 0
 	#遍历下表的索引
@@ -112,7 +113,8 @@ func refresh_extra_mission():
 	#顺便计算已完成的总分
 	ExtraContainer.get_children().map(func(x):
 		ExtraContainer.remove_child(x)
-		return x.queue_free())
+		x.queue_free())
+#		return x.queue_free())
 	Global.calendar_config.missions_score = 0
 	#防止误触发checkbox事件
 	Global.temp.is_human_pressing = false
@@ -145,7 +147,7 @@ func refresh_extra_mission():
 
 func refresh_score(score):
 	ScoreLabel.set_text("""今日得分：
-[center][font_size=50]%s[/font_size][color=red]/%s[/color][/center]"""%["[color=red]%s[/color]"%score if score>=Global.temp.current_mission.target else score,Global.temp.mission_score])
+[center][font_size=150]%s[/font_size][color=red]/%s[/color][/center]"""%["[color=red]%s[/color]"%score if score>=Global.temp.current_mission.target else score,Global.temp.mission_score])
 	
 
 #动态刷新分数的变量

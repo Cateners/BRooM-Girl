@@ -104,4 +104,3 @@ func get_date_string_from_date_dict(dict):
 func get_date_dict_from_date_string(str):
 	var r = Time.get_datetime_dict_from_datetime_string(str,false)
 	return {"year":1970,"month":1,"day":1} if r.is_empty() else r
-	pass

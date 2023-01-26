@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/TaskCheckBox.gd" id="1_44eux"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yansj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbe2e"]
 bg_color = Color(0, 0, 0, 0.156863)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -10,40 +10,32 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="TaskCheckBox" type="PanelContainer"]
-anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 40.0
 grow_horizontal = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_yansj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dbe2e")
 script = ExtResource("1_44eux")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 720.0
-offset_bottom = 48.0
+layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 716.0
-offset_bottom = 44.0
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-offset_right = 684.0
-offset_bottom = 40.0
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-offset_right = 684.0
-offset_bottom = 18.0
+layout_mode = 2
 
 [node name="NameText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-offset_right = 453.0
-offset_bottom = 18.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 1
@@ -53,9 +45,7 @@ fit_content_height = true
 autowrap_mode = 0
 
 [node name="SecondText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-offset_left = 457.0
-offset_right = 684.0
-offset_bottom = 18.0
+layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 bbcode_enabled = true
@@ -64,17 +54,13 @@ fit_content_height = true
 autowrap_mode = 0
 
 [node name="RewardText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-offset_top = 22.0
-offset_right = 684.0
-offset_bottom = 40.0
+layout_mode = 2
 mouse_filter = 1
 bbcode_enabled = true
 text = "[right]+10*exp. +100*coin[/right]"
 fit_content_height = true
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer"]
-offset_left = 688.0
-offset_right = 712.0
-offset_bottom = 40.0
+layout_mode = 2
 
 [connection signal="toggled" from="MarginContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

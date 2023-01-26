@@ -36,6 +36,7 @@ func _ready():
 		$ColorRect.set_color(Color("#e6d933"))
 	if i in range(0,1):
 		$ColorRect.set_color(Color("#ffffff"))
+	$TabContainer.set_current_tab(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -73,7 +74,7 @@ func _process(delta):
 func read_config():
 	#读取global_config
 	if not FileAccess.file_exists(Global.GLOBAL_CONFIG_PATH):
-		Global.global_config = Global.DEFAULT_GLOBAL_CONFIG
+		Global.global_config = Global.DEFAULT_GLOBAL_CONFIG.duplicate()
 		Global.global_config.start_date = Time.get_date_string_from_system()
 		Global.global_config.start_days = Ctdate.total_days(Time.get_date_dict_from_system())
 	else:

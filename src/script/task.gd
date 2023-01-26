@@ -115,10 +115,12 @@ func refresh_task():
 	#清空列表
 	TaskContainer.get_children().map(func(x):
 		TaskContainer.remove_child(x)
-		return x.queue_free())
+		x.queue_free())
+		#return x.queue_free())
 	CompletedContainer.get_children().map(func(x):
 		CompletedContainer.remove_child(x)
-		return x.queue_free())
+		x.queue_free())
+		#return x.queue_free())
 	#这是一个计算合计紧迫度的变量
 	Global.temp.task_emergency = 0
 	#用来记录位置的变量
@@ -193,7 +195,7 @@ func refresh_task():
 		
 		
 func set_emergency():
-	EmergencyText.set_text("紧迫度合计：\n[center][font_size=50]%s[/font_size][/center]"%(("%s" if Global.temp.task_emergency==0 else "[color=red]%s[/color]")%roundi(Global.temp.task_emergency)))
+	EmergencyText.set_text("紧迫度合计：\n[center][font_size=150]%s[/font_size][/center]"%(("%s" if Global.temp.task_emergency==0 else "[color=red]%s[/color]")%roundi(Global.temp.task_emergency)))
 	pass
 
 func refresh_task_and_emergency():

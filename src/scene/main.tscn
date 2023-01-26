@@ -31,10 +31,9 @@ grow_horizontal = 2
 grow_vertical = 2
 drag_to_rearrange_enabled = true
 
-[node name="封面" parent="TabContainer" instance=ExtResource("2_tciij")]
-layout_mode = 2
-offset_top = 26.0
-
 [node name="日程" parent="TabContainer" instance=ExtResource("3_0m8uf")]
+layout_mode = 2
+
+[node name="封面" parent="TabContainer" instance=ExtResource("2_tciij")]
 visible = false
 layout_mode = 2

@@ -129,8 +129,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 #
 
 
@@ -154,6 +154,8 @@ func prepare_task():
 	else:
 		Global.task_config[Global.temp.current_editing_task].condition_type = 4
 		DeleteButton.set_text("删除工作")
+		ConditionCompleteContainer.set_visible(true)
+		PeriodCompleteContainer.set_visible(true)
 	NameText.set_text(Global.task_config[Global.temp.current_editing_task].name)
 	DescriptionText.set_text(Global.task_config[Global.temp.current_editing_task].description)
 	RewardText.set_text(Global.task_config[Global.temp.current_editing_task].reward)

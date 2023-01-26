@@ -1,8 +1,8 @@
 extends Node
 
 #配置文件路径常量
-const PREFIX_PATH_DIR = "user:/"
-#const PREFIX_PATH_DIR = "/storage/emulated/0/Android/data/com.fctstudio.ms15/files"
+#const PREFIX_PATH_DIR = "user:/"
+const PREFIX_PATH_DIR = "/storage/emulated/0/Android/data/com.fctstudio.ms15/files"
 const PLAYER_CONFIG_PATH = "%s/player0.json"%PREFIX_PATH_DIR
 const GLOBAL_CONFIG_PATH = "%s/global_config.json"%PREFIX_PATH_DIR
 const DIARY_DIR_PATH = "%s/Calendar0/Diary"%PREFIX_PATH_DIR
@@ -278,7 +278,7 @@ const DEFAULT_TASK_CONFIG = []
 #var test = Time.get_datetime_dict_from_datetime_string()
 
 #存储玩家的存档的变量。
-var player_config = DEFAULT_PLAYER_CONFIG
+var player_config = DEFAULT_PLAYER_CONFIG.duplicate()
 
 #一些全局变量
 var global_config# = DEFAULT_GLOBAL_CONFIG
@@ -287,7 +287,7 @@ var global_config# = DEFAULT_GLOBAL_CONFIG
 var calendar_config #= DEFAULT_CALENDAR_CONFIG
 
 #这是"日常"左栏的配置
-var content_config = DEFAULT_CONTENT_CONFIG
+var content_config = DEFAULT_CONTENT_CONFIG.duplicate()
 
 var mission_config
 
@@ -321,8 +321,8 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# func _process(delta):
+#	pass
 
 func set_player(key, value):
 	player_config[key]=value
